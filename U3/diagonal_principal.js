@@ -2,6 +2,7 @@ let mat = [[1,2,3],
             [4,5,6],
             [7,8,9]];
 
+console.log("Matriz sin cambios: ");
 console.log(mat);
 
 function transponer(matriz) {
@@ -16,5 +17,6 @@ function transponer(matriz) {
     return arr;
 }
 
-    console.log(transponer(mat));
+console.log("Matriz traspuesta: ");
+console.log(transponer(mat));
 
