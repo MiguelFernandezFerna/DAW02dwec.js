@@ -1,39 +1,81 @@
-let tablero=[[1,2,3],
-        [4,5,6],
-        [7,8,9]];
+let tablero=[["","",""],
+            ["","",""],
+            ["","",""]];
 seguir = false;
 cont = 0;
+let x = 0;
+let y = 0;
+let jugador=[1,2];
+let jugar = 0;
+jugar = jugador[0];
 while (seguir==false) {
-    elegir = prompt("Jugador 1 dime la coordenada que deseas poner");
-for (let X = 0; X < tablero.length; X++) {
-    for (let Y = 0; Y < tablero.length; Y++) {
-        if (tablero[X][Y]==elegir&&tablero[X][Y]=="X") {
-            alert("La posición está ocupada, pierde turno");
-        } else if (tablero[X][Y]==elegir&&tablero[X][Y]=="O") {
-            alert("La posición está ocupada, pierde turno");
-        } 
-        if (tablero[X][Y]==elegir&&tablero[X][Y]!="X"&&tablero[X][Y]!="O") {
-            tablero[X][Y]="X";
-        }
-    }
-}
+    elegir = prompt("Jugador "+jugar+" dime la coordenada que deseas poner");
+switch (parseInt(elegir)) {
+    case 1:
+        x = 0;
+        y = 0;
+        break;
+    case 2:
+        x=0;
+        y=1;
+        break;
+    case 3:
+        x=0;
+        y=2;
+    break;
 
-if (cont <8) {
-    elegir2 = prompt("Jugador 2 dime la coordenada que deseas poner");
-for (let X = 0; X < tablero.length; X++) {
-    for (let Y = 0; Y < tablero.length; Y++) {
-        if (tablero[X][Y]==elegir2&&tablero[X][Y]=="X") {
-            alert("La posición está ocupada, pierde turno");
-        }else if (tablero[X][Y]==elegir2&&tablero[X][Y]=="O") {
-            alert("La posición está ocupada, pierde turno");
-        } 
-        if (tablero[X][Y]==elegir2&&tablero[X][Y]!="X"&&tablero[X][Y]!="O") {
-            tablero[X][Y]="O";
+    case 4:
+        x=1;
+        y=0;
+    break;
+
+    case 5:
+        x=1;
+        y=1;
+    break;
+
+    case 6:
+        x=1;
+        y=2;
+    break;
+
+    case 7:
+        x=2;
+        y=0;
+    break;
+    case 8:
+        x=2;
+        y=1;
+    break;
+
+    case 9:
+        x=2;
+        y=2;
+    break;
+    default:
+        break;
+}
+if (elegir>0&&elegir<10) {
+    if (jugar==1) {
+        if (tablero[x][y]!="") {
+            alert("posicion ocupada");
+        }else{
+            tablero[x][y]="X";
+            jugar++;
+        }
+    } else {
+        if (tablero[x][y]!="") {
+            alert("posicion ocupada");
+        }else{
+            tablero[x][y]="O";
+            jugar++;
         }
     }
-}
-}
-console.log(tablero);
+    if (jugar==3) {
+        jugar=jugador[0];
+    }
+
+    console.log(tablero);
 
 //1 vert
     if (tablero[0][0]=="X"&&tablero[1][0]=="X"&&tablero[2][0]=="X") {
@@ -99,10 +141,16 @@ console.log(tablero);
         seguir=true;
         alert("Ha ganado el jugador 2");
     }
-    if (cont == 8) {
-        seguir==true;
+
+    cont++;
+    if (cont==9) {
         alert("Quedais en tablas");
+        break;
     }
+} else {
+    seguir=true;
+    alert("La posicion no existe, se cerrará el programa");
+}
 }
 
     
