@@ -152,7 +152,7 @@ while (seguir==false) {
         }
         //esto se usa para el empate, si al tener 9 posiciones no has conseguido el 3 en raya, quedas en tablas
         cont++;
-        if (cont>8) {
+        if (cont>8&&seguir==false) {
             seguir=true;
             alert("Quedais en tablas");
         }
