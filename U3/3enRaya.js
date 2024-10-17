@@ -5,11 +5,14 @@ seguir = false;
 cont = 0;
 let x = 0;
 let y = 0;
+//numero de jugadores
 let jugador=[1,2];
 let idJugador = 0;
+//id del jugador
 idJugador = jugador[0];
 while (seguir==false) {
     elegir = prompt("Jugador "+idJugador+" dime la coordenada que deseas poner");
+    //switch que sirve para dependiendo del numero que pongas, te inicializa la posicion de x e y
     switch (parseInt(elegir)) {
         case 1:
         x = 0;
@@ -55,14 +58,18 @@ while (seguir==false) {
         default:
         break;
     }
+    //comprueba que el número este dentro de los valores
     if (elegir>0&&elegir<10) {
         if (idJugador==1) {
+            //Esto hace si la posicion está ocupada
             if (tablero[x][y]!="") {
                 alert("posicion ocupada");
+                //esto te lo hace si el número no está con ninguna letra
             }else{
                 tablero[x][y]="X";
                 idJugador++;
             }
+            //hace lo mismo pero con el jugador 2
         } else {
             if (tablero[x][y]!="") {
                 alert("posicion ocupada");
@@ -71,12 +78,14 @@ while (seguir==false) {
                 idJugador++;
             }
         }
+        //aquí controla que el id no pase del 2, ya que solo sois 2 jugadores
+        //lo reinicia a jugador 1, para que vuelva a empezar el ciclo
         if (idJugador==3) {
             idJugador=jugador[0];
         }
         
         console.log(tablero);
-        
+        //todas las posibles combinaciones para que uno de los 2 jugadores gane
         //1 vert
         if (tablero[0][0]=="X"&&tablero[1][0]=="X"&&tablero[2][0]=="X") {
             seguir=true;
@@ -141,12 +150,13 @@ while (seguir==false) {
             seguir=true;
             alert("Ha ganado el jugador 2");
         }
-        
+        //esto se usa para el empate, si al tener 9 posiciones no has conseguido el 3 en raya, quedas en tablas
         cont++;
         if (cont>8) {
             seguir=true;
             alert("Quedais en tablas");
         }
+        //esto es lo que pasa si has elegido un numero menor que 1 o mayor de 10
     } else {
         seguir=true;
         alert("La posicion no existe, se cerrará el programa");
