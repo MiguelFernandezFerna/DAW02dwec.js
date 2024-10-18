@@ -67,6 +67,7 @@ while (seguir==false) {
                 //esto te lo hace si el número no está con ninguna letra
             }else{
                 tablero[x][y]="X";
+                document.getElementById(elegir).textContent=tablero[x][y];
                 idJugador++;
             }
             //hace lo mismo pero con el jugador 2
@@ -75,6 +76,7 @@ while (seguir==false) {
                 alert("posicion ocupada");
             }else{
                 tablero[x][y]="O";
+                document.getElementById(elegir).textContent=tablero[x][y];
                 idJugador++;
             }
         }
