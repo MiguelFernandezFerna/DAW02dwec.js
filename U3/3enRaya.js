@@ -67,6 +67,8 @@ while (seguir==false) {
                 //esto te lo hace si el número no está con ninguna letra
             }else{
                 tablero[x][y]="X";
+                //esto lo haces con el DOM, para que escoja el elemento con el id asignado 
+                //y lo igualas al contenido que quieres meter
                 document.getElementById(elegir).textContent=tablero[x][y];
                 idJugador++;
             }
@@ -76,6 +78,8 @@ while (seguir==false) {
                 alert("posicion ocupada");
             }else{
                 tablero[x][y]="O";
+                //esto lo haces con el DOM, para que escoja el elemento con el id asignado 
+                //y lo igualas al contenido que quieres meter
                 document.getElementById(elegir).textContent=tablero[x][y];
                 idJugador++;
             }
