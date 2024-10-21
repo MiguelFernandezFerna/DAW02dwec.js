@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "C:/xampp/htdocs/misPHP"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../DIW/1 trimestre/PracticasYejercicios"
+		},
+		{
+			"path": "../test"
+		},
+		{
+			"path": "../practicaletraDNI"
+		},
+		{
+			"path": "../practicaTarjetas"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DWEC"
+	}
+}
