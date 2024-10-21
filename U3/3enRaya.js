@@ -10,6 +10,13 @@ let jugador=[1,2];
 let idJugador = 0;
 //id del jugador
 idJugador = jugador[0];
+function pulsar(e) {
+    if (idJugador==jugador[0]) {
+        alert("X");
+    }else if (idJugador==jugador[1]) {
+        alert("O");
+    }
+}
 while (seguir==false) {
     elegir = prompt("Jugador "+idJugador+" dime la coordenada que deseas poner");
     //switch que sirve para dependiendo del numero que pongas, te inicializa la posicion de x e y
@@ -66,10 +73,11 @@ while (seguir==false) {
                 alert("posicion ocupada");
                 //esto te lo hace si el número no está con ninguna letra
             }else{
-                tablero[x][y]="X";
                 //esto lo haces con el DOM, para que escoja el elemento con el id asignado 
                 //y lo igualas al contenido que quieres meter
-                document.getElementById(elegir).textContent=tablero[x][y];
+                // document.getElementById(elegir).textContent=tablero[x][y];
+                let boton = document.getElementById(elegir);
+                boton.addEventListener('click',pulsar);
                 idJugador++;
             }
             //hace lo mismo pero con el jugador 2
@@ -77,10 +85,11 @@ while (seguir==false) {
             if (tablero[x][y]!="") {
                 alert("posicion ocupada");
             }else{
-                tablero[x][y]="O";
                 //esto lo haces con el DOM, para que escoja el elemento con el id asignado 
                 //y lo igualas al contenido que quieres meter
-                document.getElementById(elegir).textContent=tablero[x][y];
+                //document.getElementById(elegir).textContent=tablero[x][y];
+                let boton = document.getElementById(elegir);
+                boton.addEventListener('click',pulsar);
                 idJugador++;
             }
         }
