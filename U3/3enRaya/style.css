@@ -1,0 +1,23 @@
+body{
+    max-width: 480px;
+    margin: auto;
+    font-family: Verdana;
+}
+
+.tablero{
+    border: solid;
+    min-height: 300px;
+    border-spacing: 0;
+    font-size: 36pt;
+}
+
+.casilla{
+    text-align: center;
+    min-width: 100px;
+    border: solid 1px;
+}
+
+.casilla:hover{
+    background-color: lightblue;
+    cursor: pointer;    
+}
