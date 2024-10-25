@@ -49,11 +49,12 @@ function comprobarTablas() {
     }
 }
 
-function comprobarHorizontal() {
+function comprobarHorizontal(numeroCasilla) {
    for (let i = 0; i < CASILLAS_VICTORIA_HORIZONTAL.length; i++) {
-    if (CASILLAS_VICTORIA_HORIZONTAL[i]==FICHAS[0]||CASILLAS_VICTORIA_HORIZONTAL[i]==FICHAS[1]) {
-         victoria=true;
-    }
+    
+    // if (CASILLAS_VICTORIA_HORIZONTAL[i]==FICHAS[0]||CASILLAS_VICTORIA_HORIZONTAL[i]==FICHAS[1]) {
+    //      victoria=true;
+    // }
    }
     return victoria;
 }
