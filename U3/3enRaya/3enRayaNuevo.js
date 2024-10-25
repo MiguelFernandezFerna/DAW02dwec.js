@@ -1,5 +1,24 @@
 "use strict";
 
+const CASILLAS_VICTORIA_VERTICAL = [
+    [1,4,7],
+    [2,5,8],
+    [3,6,9],
+];
+ 
+const CASILLAS_VICTORIA_HORIZONTAL = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+]
+ 
+const CASILLAS_VICTORIA_DIAGONAL_PRINCIPAL = [
+    [1,5,9],
+]
+
+ const CASILLAS_VICTORIA_DIAGONAL_SECUNDARIA = [
+    [3,5,7],
+ ];
 
 const CASILLAS_VALIDAS = ['1','2','3','4','5','6','7','8','9',];
 const FICHAS = ['X','O'];
@@ -31,19 +50,40 @@ function comprobarTablas() {
 }
 
 function comprobarHorizontal() {
-    
+   for (let i = 0; i < CASILLAS_VICTORIA_HORIZONTAL.length; i++) {
+    if (CASILLAS_VICTORIA_HORIZONTAL[i]==FICHAS[0]||CASILLAS_VICTORIA_HORIZONTAL[i]==FICHAS[1]) {
+         victoria=true;
+    }
+   }
+    return victoria;
 }
 
 function comprobarVertical() {
-    
+    for (let i = 0; i < CASILLAS_VICTORIA_VERTICAL.length; i++) {
+        if (CASILLAS_VICTORIA_VERTICAL[i]==FICHAS[0]||CASILLAS_VICTORIA_VERTICAL[i]==FICHAS[1]) {
+            victoria=true;
+            return victoria;
+        }
+        
+    }
 }
 
 function comprobarDiagonalPrincipal() {
-    
+    for (let i = 0; i < CASILLAS_VICTORIA_DIAGONAL_PRINCIPAL.length; i++) {
+        if (CASILLAS_VICTORIA_DIAGONAL[i]==FICHAS[0]||CASILLAS_VICTORIA_DIAGONAL[i]==FICHAS[1]) {
+            victoria=true;
+            return victoria;
+        }
+    }
 }
 
 function comprobarDiagonaSecundaria() {
-    
+    for (let i = 0; i < CASILLAS_VICTORIA_DIAGONAL_SECUNDARIA.length; i++) {
+        if (CASILLAS_VICTORIA_DIAGONAL_SECUNDARIA[i]==FICHAS[0]||CASILLAS_VICTORIA_DIAGONAL_SECUNDARIA[i]==FICHAS[1]) {
+            victoria=true;
+            return victoria;
+        }   
+    }
 }
 
 
@@ -86,7 +126,6 @@ function principal() {
         //podemos hacerlo de la manera comentada, o de la manera no comentada
         let casilla = document.querySelector(`#casilla-${i}`);
         casilla.addEventListener('click', clickCasilla);
-
     }
 }
 
