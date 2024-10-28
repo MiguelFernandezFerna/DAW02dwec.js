@@ -20,8 +20,6 @@ function comprobarCasillaValida(casilla) {
     return CASILLAS_VALIDAS.includes(contenido);
 }
 
-
-
 let turnoActual = 0;
 
 
@@ -50,15 +48,14 @@ function comprobarVictoria() {
 }
 
 function finalizarJuego() {
-    for (let i = 0; i <=9; i++) {
-        let casilla = document.getElementById(`casilla.${i}`);
+    for (let i = 1; i <=9; i++) {
+        let casilla = document.getElementById(`casilla-${i}`);
         casilla.removeEventListener('click', clickCasilla);
     }
 }
 
 function comprobarFinDeJuego(casilla) {
     const numeroCasilla = casilla.textContent;
-    
     if (comprobarVictoria()) {
         document.getElementById('mensajes').textContent='Ganan las: '+FICHAS[turnoActual%2];
         finalizarJuego();
@@ -75,12 +72,13 @@ function comprobarFinDeJuego(casilla) {
 
 function clickCasilla(evento) {
     let casilla = evento.target;
-
     if(comprobarCasillaValida(casilla)){
         casilla.textContent = FICHAS[turnoActual%2];
         comprobarFinDeJuego(casilla);
         turnoActual++;
     }
+    let turnos = document.getElementById('turno');
+    turno.textContent= "Turno de "+FICHAS[turnoActual%2];
 }
 
 function principal() {
@@ -89,6 +87,8 @@ function principal() {
         //podemos hacerlo de la manera comentada, o de la manera no comentada
         casilla.addEventListener('click', clickCasilla);
     }
+    let turnos = document.getElementById('turno');
+    turno.textContent="Turno de X";
 }
 
 principal();
