@@ -78,7 +78,7 @@ function clickCasilla(evento) {
         turnoActual++;
     }
     let turnos = document.getElementById('turno');
-    turno.textContent= "Turno de "+FICHAS[turnoActual%2];
+    turnos.textContent= "Turno de "+FICHAS[turnoActual%2];
 }
 
 function principal() {
@@ -88,7 +88,7 @@ function principal() {
         casilla.addEventListener('click', clickCasilla);
     }
     let turnos = document.getElementById('turno');
-    turno.textContent="Turno de X";
+    turnos.textContent="Turno de X";
 }
 
 principal();
