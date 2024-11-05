@@ -5,20 +5,23 @@ function repetidos(matriz) {
     let array=[];
     let num = 0;
     let aux = 0;
+    //recorremos una vez el array para coger la ultima aparicion de cada numero
     for (let i = 0; i < matriz.length; i++) {
         let cont = 0;
         aux = matriz[i];
+        //si esta es la ultimaaparicion se mete dentro y empieza un cbucle de 0 para calcular todas las apariciones y sumarlas en un contador
         if (aux!=matriz[i+1]) {
             for (let j = 0; j < matriz.length; j++) {
                 num = matriz[i];
-    
+                //si la posicion es igual al número que hemos cogido del primer recorrido del array sumamos
             if (num==matriz[j]) {
                 cont++;
             }
             }
         }
+        //lo pasamos a un segundo array solo de los contadores de las posiciones
             array.push(cont);
-
+        //comprobamos que si el contenido de la posicion es 0, se suprime, para que no haya 0 innecesarios
             for (let i = 0; i < array.length; i++) {
                 if (array[i]==0) {
                     array.pop(array[i]);
