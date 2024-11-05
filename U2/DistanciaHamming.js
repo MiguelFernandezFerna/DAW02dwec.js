@@ -15,7 +15,7 @@ function DistanciaHamming() {
 }
 
 
-if (DistanciaHamming()!=-1) {
+if (DistanciaHamming()==-1) {
     console.log("Error en la longitud de las palabras, la longitud hamming es: "+DistanciaHamming());
 }else{
     console.log("La distancia Hamming es: "+DistanciaHamming());
