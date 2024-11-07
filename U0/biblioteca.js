@@ -6,9 +6,9 @@ function esPrimo(numero){
     }
     //Ahora como cualquier numero es divisible por 1 y por el mismo en cualquier caso, mayor que 1, comprobamos que no sea divisible por cualquier otro
     for (let k=2;k<numero;k++) {
-     if (numero%k==0) {
-        return false;
-     }   
+        if (numero%k==0) {
+            return false;
+        }   
     }
     return true;  
 }
