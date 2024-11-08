@@ -33,12 +33,15 @@ function comprobarTablas() {
 function comprobarVictoria() {
     //es lo mismo que un foreach
     for(let combinacion of COMBINACIONES_GANADORAS) {
-       let a = document.getElementById(`casilla-${combinacion[0]}`).textContent;
-       let b = document.getElementById(`casilla-${combinacion[1]}`).textContent;
-       let c = document.getElementById(`casilla-${combinacion[2]}`).textContent;
+       let a = document.getElementById(`casilla-${combinacion[0]}`);
+       let b = document.getElementById(`casilla-${combinacion[1]}`);
+       let c = document.getElementById(`casilla-${combinacion[2]}`);
 
        //Si encuentro una combinación ganadora
-       if ((a===b)&&(a===c)) {
+       if ((a.textContent===b.textContent)&&(a.textContent===c.textContent)) {
+        a.classList.add('casilla-ganadora');
+        b.classList.add('casilla-ganadora');
+        c.classList.add('casilla-ganadora');
         return true;
        }
     }
@@ -51,13 +54,15 @@ function finalizarJuego() {
     for (let i = 1; i <=9; i++) {
         let casilla = document.getElementById(`casilla-${i}`);
         casilla.removeEventListener('click', clickCasilla);
+        casilla.classList.remove('casilla-habilitada');
     }
 }
 
 function comprobarFinDeJuego(casilla) {
     const numeroCasilla = casilla.textContent;
     if (comprobarVictoria()) {
-        document.getElementById('mensajes').textContent='Ganan las: '+FICHAS[turnoActual%2];
+        let mensajes = document.getElementById('mensajes').textContent='Ganan las: '+FICHAS[turnoActual%2];
+        mensajes.classList.add('mensajes-ganar');
         finalizarJuego();
         return;
     }
@@ -76,6 +81,9 @@ function clickCasilla(evento) {
         casilla.textContent = FICHAS[turnoActual%2];
         comprobarFinDeJuego(casilla);
         turnoActual++;
+
+        casilla.removeEventListener('click', clickCasilla);
+        casilla.classList.remove('casilla-habilitada');
     }
     let turnos = document.getElementById('turno');
     turnos.textContent= "Turno de "+FICHAS[turnoActual%2];
@@ -86,6 +94,7 @@ function principal() {
         let casilla = document.getElementById(`casilla-${i}`);
         //podemos hacerlo de la manera comentada, o de la manera no comentada
         casilla.addEventListener('click', clickCasilla);
+        casilla.classList.add('casilla-habilitada');
     }
     let turnos = document.getElementById('turno');
     turnos.textContent="Turno de X";

@@ -17,7 +17,18 @@ body{
     border: solid 1px;
 }
 
-.casilla:hover{
+.casilla-habilitada:hover{
     background-color: lightblue;
     cursor: pointer;    
+}
+
+.casilla-ganadora{
+    background-color: gold;
+}
+
+.mensajes-ganar{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-size: larger;
 }
