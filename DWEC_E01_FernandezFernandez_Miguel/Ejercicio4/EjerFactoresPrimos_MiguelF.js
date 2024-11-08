@@ -15,25 +15,25 @@ function esPrimo(numero){
     }
     return true;  
 }
-function Factorizar(num) {
-    let arrayPrimos = [];
+function Factorizar(num){
+    let factores = [];
+
     let p = 2;
-    while (num!=1) {
-        if (esPrimo(p)) {
-            if (num%p==0) {
-                arrayPrimos.push(p);
-                num=num/p;
-            }
+    while(num !== 1){
+        if(!esPrimo(p)){
             p++;
-            if (num%p!=0) {
-                p=2;
-            }
+            continue;
         }
-        if (!esPrimo(p)) {
+        if(num%p===0){
+            factores.push(p);
+            num = (num/p);
+        }
+        else{
             p++;
         }
-        }
-    return arrayPrimos;
+    }
+
+    return factores;
 }
 
 console.log(Factorizar(numeros));
