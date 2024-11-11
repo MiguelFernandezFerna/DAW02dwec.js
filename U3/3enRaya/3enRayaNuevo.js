@@ -61,7 +61,8 @@ function finalizarJuego() {
 function comprobarFinDeJuego(casilla) {
     const numeroCasilla = casilla.textContent;
     if (comprobarVictoria()) {
-        let mensajes = document.getElementById('mensajes').textContent='Ganan las: '+FICHAS[turnoActual%2];
+        let mensajes = document.getElementById('mensajes');
+        mensajes.textContent='Ganan las: '+FICHAS[turnoActual%2];
         mensajes.classList.add('mensajes-ganar');
         finalizarJuego();
         return;
@@ -69,7 +70,9 @@ function comprobarFinDeJuego(casilla) {
     
 
     if (comprobarTablas()) {
-        document.getElementById('mensajes').textContent='Tablas';
+        let mensaje_empate = document.getElementById('mensajes');
+        mensaje_empate.textContent='Tablas';
+        mensaje_empate.classList.add('mensaje-empate');
         finalizarJuego();
         return;
     }

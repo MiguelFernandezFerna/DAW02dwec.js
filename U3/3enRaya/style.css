@@ -32,3 +32,8 @@ body{
     text-align: center;
     font-size: larger;
 }
+.mensaje-empate{
+    background-color: greenyellow;
+    text-align: center;
+    font-size: larger;
+}
