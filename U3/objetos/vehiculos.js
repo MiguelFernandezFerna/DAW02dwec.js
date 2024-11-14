@@ -63,6 +63,8 @@ class Locomotora extends Vehiculo {
     }
 }
 
+let loc= new Locomotora(33,"alinol","Siemens","Bueno",999);
+
 
 
 
