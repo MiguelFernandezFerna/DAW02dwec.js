@@ -7,6 +7,31 @@
     <link rel="stylesheet" href="estiloTabla.css">
 </head>
 <body>
+    <form action="get">
+        <div class="formulario">
+            <div class="formulario-fila">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            <div class="formulario-fila">
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido">
+            </div>
+            <div class="formulario-fila">
+                <label for="nacimiento">Año</label>
+                <input type="number" name="nacimiento" id="nacimiento" value="1492">
+            </div>
+            <div class="formulario-fila">
+                <label for="sueldo">Sueldo</label>
+                <input type="number" name="sueldo" id="sueldo" value="1200">
+            </div>
+            <div class="formulario-fila"></div>
+            <div class="formulario-fila">
+                <button id="formulario-enviar">Enviar datos</button>
+            </div>
+        </div>
+    </form>
+    <br>
     <table>
         <thead>
             <th id="casilla-1" class="casilla">Nombre</th>

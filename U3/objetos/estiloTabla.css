@@ -1,7 +1,26 @@
+
+.formulario{
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    width: 320px;
+}
+
+.formulario-fila button{
+    margin: 8px;
+    margin-right: 0;
+    width: 100%;
+}
+
 table,td,th{
     border: solid;
     border-collapse: collapse;
     border-width: 1px;
     padding: 5px;
     text-align: center;
+    cursor: pointer;
 }
+
+th:hover{
+    background-color: red;
+}
+
