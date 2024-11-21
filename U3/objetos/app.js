@@ -74,7 +74,6 @@ let empleados = [
 
 let tabla = document.getElementById("lista-empleados")
 empleados.forEach((empleado) =>{
-    // tabla.innerHTML += empleado; 
     tabla.appendChild(empleado.render());
 });
 
@@ -102,15 +101,12 @@ function principal() {
     for(let i = 1; i <= 4; i++) {
         let casilla = document.getElementById(`casilla-${i}`);
         casilla.addEventListener('click', OrdenarOnClick);
+
+        let email = document.getElementById("email");
+        email.addEventListener('blur', validacionEmail);
     }
 
 }
-
-function comprobarCasillaValida(casilla) {
-    let contenido = casilla.textContent;
-    return CASILLAS_VALIDAS.includes(contenido);
-}
-
 function OrdenarOnClick(event) {
     let casilla = event.target;
 
@@ -136,11 +132,33 @@ function OrdenarOnClick(event) {
         let tabla = document.getElementById("lista-empleados");
         tabla.innerHTML='';
         empleados.forEach((empleado) =>{
-        // tabla.innerHTML += empleado; 
         tabla.appendChild(empleado.render());
         });
     }
 }
+
+function comprobarCasillaValida(casilla) {
+    let contenido = casilla.textContent;
+    return CASILLAS_VALIDAS.includes(contenido);
+}
+
+function validarEmail(email) {
+    const validacion = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return validacion.test(email);
+}
+
+function validacionEmail(event) {
+    let email = event.target.value;
+    let valido = validarEmail(email);
+    let mensaje = document.getElementById("mensaje");
+    if (!valido) {
+        mensaje.textContent = "El email no es válido";
+    }else{
+        mensaje.textContent = "";
+    }
+}
+
+
 
 principal();
 
