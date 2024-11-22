@@ -10,6 +10,11 @@
     <form action="get">
         <div class="formulario">
             <div class="formulario-fila">
+                <label for="dni">DNI</label>
+                <input type="text" name="dni" id="dni">
+                <p id="mensaje-dni"></p>
+            </div>
+            <div class="formulario-fila">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre">
             </div>
@@ -19,7 +24,8 @@
             </div>
             <div class="formulario-fila">
                 <label for="nacimiento">Año</label>
-                <input type="number" name="nacimiento" id="nacimiento" value="1492">
+                <input type="text" name="nacimiento" id="nacimiento" value="10/11/1992">
+                <p id="mensaje-fecha"></p>
             </div>
             <div class="formulario-fila">
                 <label for="sueldo">Sueldo</label>
@@ -28,7 +34,7 @@
             <div class="formulario-fila">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email">
-                <p id="mensaje"></p>
+                <p id="mensaje-email"></p>
             </div>
             <div class="formulario-fila">
                 <button id="formulario-enviar">Enviar datos</button>
@@ -38,10 +44,11 @@
     <br>
     <table>
         <thead>
-            <th id="casilla-1" class="casilla">Nombre</th>
-            <th id="casilla-2" class="casilla">Apellidos</th>
-            <th id="casilla-3" class="casilla">Año Nacimiento</th>
-            <th id="casilla-4" class="casilla">Sueldo</th>
+            <th id="casilla-1" class="casilla">DNI</th>
+            <th id="casilla-2" class="casilla">Nombre</th>
+            <th id="casilla-3" class="casilla">Apellidos</th>
+            <th id="casilla-4" class="casilla">Año Nacimiento</th>
+            <th id="casilla-5" class="casilla">Sueldo</th>
         </thead>
         <tbody id="lista-empleados"></tbody>
     </table>

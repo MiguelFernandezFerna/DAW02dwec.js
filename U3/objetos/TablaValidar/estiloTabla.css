@@ -24,7 +24,13 @@ th:hover{
     background-color: red;
 }
 
-#mensaje{
+#mensaje-email{
+    color: red;
+}
+#mensaje-dni{
+    color: red;
+}
+#mensaje-fecha{
     color: red;
 }
 
