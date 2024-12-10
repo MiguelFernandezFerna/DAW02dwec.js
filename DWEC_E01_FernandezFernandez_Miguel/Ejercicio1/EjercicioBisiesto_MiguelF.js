@@ -1,5 +1,5 @@
 "use strict";
-let año = 2000;
+let año = 1812;
 //Los if de dentro de las funciones les hago por separado para no liarme
 function esBisiesto(años) {
     let bisiesto = false;

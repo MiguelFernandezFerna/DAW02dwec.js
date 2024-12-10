@@ -1,5 +1,5 @@
 "use strict";
-let num = 30;
+let num = 50;
 //He usado condiciones if else unidas por los else if
 //con una doble condicion en cada una para que no salgan numeros repetidos
 //o también para que se pueda cumplir sin errores la condicion

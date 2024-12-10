@@ -2,7 +2,7 @@
 let matriz = [
     [1 ,2 ,3],
     [4 ,5 ,6],
-    [7 ,8 ,9],
+    [7 ,8 ,20],
 ];
 function Traza(matrices) {
     let traza = 0;
@@ -15,7 +15,6 @@ function Traza(matrices) {
         for (let j = 0; j < matrices[i].length; j++) {
             contJ++;
         }
-        
     }
     //esta condicion es la que nos hace comprobar si es cuadrada o no
     /*
@@ -28,7 +27,6 @@ function Traza(matrices) {
     if (contJ==(contI*contI)) {
         comprobado=true;
     }
-
     if (comprobado==true) {
         for (let i = 0; i < matrices.length; i++) {
             for (let j = 0; j < matrices[i].length; j++) {
@@ -38,7 +36,6 @@ function Traza(matrices) {
             }
         }
     }
-
     return traza;
 }
 

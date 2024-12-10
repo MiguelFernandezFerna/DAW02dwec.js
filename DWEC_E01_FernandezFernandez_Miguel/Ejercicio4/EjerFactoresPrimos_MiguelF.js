@@ -1,7 +1,7 @@
 "use strict";
 
 //NOTA IMPORTANTE: Funciona con el 54 y con el 16, con el 99 no se porque no
-let numeros = 54;
+let numeros = 99;
 function esPrimo(numero){
     //el 1 no es primo, condicion puesta por el cliente, o sea que nos lo saltamos
     if (numero<2) {
