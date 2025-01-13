@@ -33,17 +33,17 @@ function comprobarTablas() {
 function comprobarVictoria() {
     //es lo mismo que un foreach
     for(let combinacion of COMBINACIONES_GANADORAS) {
-       let a = document.getElementById(`casilla-${combinacion[0]}`);
-       let b = document.getElementById(`casilla-${combinacion[1]}`);
-       let c = document.getElementById(`casilla-${combinacion[2]}`);
+        let a = document.getElementById(`casilla-${combinacion[0]}`);
+        let b = document.getElementById(`casilla-${combinacion[1]}`);
+        let c = document.getElementById(`casilla-${combinacion[2]}`);
 
        //Si encuentro una combinación ganadora
-       if ((a.textContent===b.textContent)&&(a.textContent===c.textContent)) {
-        a.classList.add('casilla-ganadora');
-        b.classList.add('casilla-ganadora');
-        c.classList.add('casilla-ganadora');
-        return true;
-       }
+        if ((a.textContent===b.textContent)&&(a.textContent===c.textContent)) {
+            a.classList.add('casilla-ganadora');
+            b.classList.add('casilla-ganadora');
+            c.classList.add('casilla-ganadora');
+            return true;
+        }
     }
 
     //Si no lo hago

@@ -7,7 +7,7 @@ palabras.forEach(function (elem) {
 palabras.forEach(function (elem, indice) {
     console.log(indice, elem);
 });
-palabras.forEach((elem) => {
+palabras.forEach((elem, indice) => {
     console.log(indice, elem);
 });
 

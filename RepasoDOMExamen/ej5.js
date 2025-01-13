@@ -5,7 +5,7 @@
 const boton = document.getElementById("addButton");
 const lista = document.getElementById("list");
 
-addButton.addEventListener("click", () => {
+boton.addEventListener("click", () => {
     const newItem = document.createElement("li");
     newItem.textContent = "Nuevo elemento";
     lista.appendChild(newItem);

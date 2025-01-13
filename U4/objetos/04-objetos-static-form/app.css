@@ -1,0 +1,10 @@
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 320px;
+}
+
+.formulario-fila button {
+    margin: 8px 0;
+    width: 100%;
+}
