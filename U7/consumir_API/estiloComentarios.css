@@ -91,4 +91,19 @@ body {
     font-style: italic;
     color: #999;
   }
+
+  .ver-usuario{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 10px 15px;
+    margin-left: 750px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
   
